@@ -1,0 +1,54 @@
+.gallery-header {
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.875rem 0rem;
+  background-color: #fff;
+}
+
+.gallery-header__nav {
+  position: absolute;
+  right: 1.875rem;
+  top: 1.875rem;
+}
+
+.gallery-header__logo {
+  display: block;
+  width: 18.75rem;
+  height: 5rem;
+  margin: auto;
+  margin-bottom: 2.9375rem;
+}
+
+.gallery-header__form {
+  max-width: 34.375rem;
+  margin: auto;
+}
+
+.form__input {
+  border: 0;
+  width: 28.125rem;
+  height: 1.625rem;
+  border: #adafb2 solid 2px;
+  border-radius: 1.625rem;
+  padding-left: 0.9375rem;
+  font-family: "Roboto", sans-serif;
+  &::placeholder {
+    font-size: 0.625rem;
+    font-family: "Roboto", sans-serif;
+    color: #d1d3d4;
+  }
+}
+
+.form__btn {
+  border: 0;
+  width: 5rem;
+  height: 1.625rem;
+  border-radius: 1.625rem;
+  color: #ffffff;
+  background: #cddc39;
+  font-family: "Comfortaa", sans-serif;
+  font-weight: 700;
+}

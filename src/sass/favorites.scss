@@ -1,0 +1,11 @@
+.nav__item {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #673ab7;
+}
+
+.nav__item::before {
+  display: inline-block;
+  content: '\2605';
+  margin-right: 0.75rem;
+}
