@@ -29,6 +29,11 @@
       margin-bottom: 0;
     }
   }
+
+  .modal-body {
+    width: 17.5rem;
+    height: 10.9375rem;
+  }
 }
 
 @media (min-width: 480px) {
@@ -58,11 +63,20 @@
       margin-bottom: 0.9375rem;
     }
   }
+
+  .modal-body {
+    width: 25rem;
+    height: 15.625rem;
+  }
 }
 
 @media (max-width: 767px) {
   .gallery-header {
     padding: 3rem 0rem 1.25rem 0rem;
+  }
+
+  .home-page-padding {
+    padding-top: 5rem;
   }
 
   .gallery-header__nav {
@@ -76,6 +90,10 @@
 
   .form__input {
     width: 18.75rem;
+  }
+
+  .modal-content {
+    width: 75%;
   }
 }
 
@@ -92,6 +110,11 @@
     &:nth-last-child(n + 4) {
       margin-bottom: 0.9375rem;
     }
+  }
+
+  .modal-body {
+    width: 42.5rem;
+    height: 26.5625rem;
   }
 }
 

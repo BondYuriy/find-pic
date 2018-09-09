@@ -8,18 +8,18 @@
   <title>Find Pic</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
-<link href="styles.css?2fc899a5ebc5396e0c58" rel="stylesheet"></head>
+<link href="styles.css?f28d706c6b06e4c198c3" rel="stylesheet"></head>
 
 <body>
   <div class="wrapper">
     <header class="gallery-header">
-   
-      <div class="gallery-header__container">
-        <a href="#" class="gallery-header__logo">
+
+      <div class="gallery-header__container home-page-padding">
+        <a href="#" class="gallery-header__logo js-logo">
           <img class="logo" src="../src/img/logo.png" srcset="../src/img/logo@2x.png" alt="logo">
         </a>
-        <form class="gallery-header__form">
-          <input type="text" class="form__input" placeholder="Введите поисковой запрос">
+        <form class="gallery-header__form js-form">
+          <input type="text" class="form__input js-input" placeholder="Введите поисковой запрос">
           <button class="form__btn">Поиск</button>
         </form>
       </div>
@@ -27,51 +27,47 @@
       <nav class="gallery-header__nav">
         <a href="#" class="nav__item">Избранное</a>
       </nav>
-      
+
     </header>
     <main class="gallery">
-      <!-- <h2 class="gallery-title">Галерея</h2> -->
-      <ul class="gallery-list">
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-        <li class="gallery-list__item">
-          <img src="https://cdn.pixabay.com/photo/2017/11/19/23/25/bmw-2964072_960_720.jpg" alt="" class="gallery-img">
-        </li>
-      </ul>
-      <button class="gallery-btn">Показать ещё</button>
+      <h2 class="gallery-title hidden">Галерея</h2>
+      <ul class="gallery-list js-list"></ul>
+      <button class="gallery-btn js-next-btn hidden">Показать ещё</button>
     </main>
+
+    <div class="modal hidden js-modal">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="#" alt="#" class="modal-img js-modal-img">
+        </div>
+        <div class="modal-footer">
+          <div class="selection-btn">
+            <button class="btn btn-back js-btn-back">
+              <svg class="fa fa-back" width="12" height="12">
+                <use href="../src/img/icons/back.svg" />
+              </svg>
+            </button>
+            <button class="btn btn-next js-btn-next">
+              <svg class="fa fa-next" width="12" height="12">
+                <use href="../src/img/icons/next.svg" />
+              </svg>
+            </button>
+          </div>
+          <button class="btn btn-favorites js-btn-favorites">
+            <svg class="fa fa-favorites" width="12" height="12">
+              <use href="../src/img/icons/star.svg" />
+            </svg>
+          </button>
+          <button class="btn btn-close js-btn-close">
+            <svg class="fa fa-favorites" width="12" height="12">
+              <use href="../src/img/icons/close.svg" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
-<script type="text/javascript" src="bundle.js?2fc899a5ebc5396e0c58"></script></body>
+<script type="text/javascript" src="bundle.js?f28d706c6b06e4c198c3"></script></body>
 
 </html>
