@@ -68,7 +68,9 @@ flex: 0 0 32%;
 }
 
 .fa {
-  border: 0;
-  display: block;
-  fill: color("white");
+  display: inline-block;
+  fill: #ffffff;
+  &:hover {
+    fill: #cddc39;
+  }
 }

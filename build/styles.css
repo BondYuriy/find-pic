@@ -375,11 +375,8 @@ template {
   font-family: "Roboto", sans-serif;
   color: #673ab7; }
 
-.nav__item::before {
-  display: inline-block;
-  content: "\2605";
-  margin-right: 0.75rem;
-  color: #673ab7; }
+.nav__item-icon {
+  fill: #673ab7; }
 
 .logo {
   display: block;
@@ -494,9 +491,10 @@ template {
   flex: 0 0 32%; }
 
 .fa {
-  border: 0;
-  display: block;
-  fill: color("white"); }
+  display: inline-block;
+  fill: #ffffff; }
+  .fa:hover {
+    fill: #cddc39; }
 
 .hidden {
   display: none; }
@@ -555,8 +553,8 @@ template {
     margin-bottom: 1.25rem; }
   .form__input {
     width: 18.75rem; }
-  .modal-content {
-    width: 75%; } }
+  .modal-footer {
+    width: 15.625rem; } }
 
 @media (min-width: 768px) and (max-width: 959px) {
   .gallery {
