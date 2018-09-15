@@ -91,13 +91,9 @@
   .form__input {
     width: 18.75rem;
   }
-
-  .modal-footer {
-    width: 15.625rem;
-  }
 }
 
-@media (min-width: 768px) and (max-width: 959px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .gallery {
     width: 41.25rem;
   }
@@ -118,7 +114,13 @@
   }
 }
 
-@media (min-width: 960px) {
+@media (max-width: 1024px) {
+  .modal-footer {
+    width: 15.625rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .gallery {
     width: 55.3125rem;
   }

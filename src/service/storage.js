@@ -18,4 +18,11 @@ export default class Storage {
   getFavorites() {
     return JSON.parse(localStorage.getItem(this.name)).pictures;
   }
+
+  removeFavorites(id) {
+    const storage = JSON.parse(localStorage.getItem(this.name)).pictures;
+    localStorage.removeItem(this.name);
+    const newStorage = storage.filter(item => item.id !== id);
+    localStorage.setItem(this.name, JSON.stringify({ pictures: newStorage }));
+  }
 }

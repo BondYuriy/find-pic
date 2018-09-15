@@ -3,9 +3,9 @@
   position: fixed;
   z-index: 10;
   left: 0;
+  right: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 10;
 }
 
 .modal-body {
@@ -59,12 +58,12 @@
 
 .btn-back,
 .btn-next {
-flex: 0 0 50%;
+  flex: 0 0 50%;
 }
 
 .btn-favorites,
 .btn-close {
-flex: 0 0 32%;
+  flex: 0 0 32%;
 }
 
 .fa {

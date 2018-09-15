@@ -1,9 +1,5 @@
-import EventEmitter from "../service/event-emitter";
-
-export default class View extends EventEmitter {
+export default class View {
   constructor() {
-    super();
-    this.main = document.querySelector(".gallery");
     this.galleryContainer = document.querySelector(
       ".gallery-header__container"
     );
@@ -11,7 +7,6 @@ export default class View extends EventEmitter {
     this.modal = document.querySelector(".js-modal");
     this.modelImg = document.querySelector(".js-modal-img");
     this.galleryTitle = document.querySelector(".js-gallery-title");
-    this.btnFavorites = document.querySelector(".js-btn-favorites");
     this.listMain = document.querySelector(".js-list-main");
     this.listFavorites = document.querySelector(".js-list-favorites");
     this.containerMain = document.querySelector(
@@ -23,11 +18,6 @@ export default class View extends EventEmitter {
   addsElements(items) {
     this.galleryContainer.classList.remove("home-page-padding");
     this.addMore.classList.remove("hidden");
-
-    this.listMain.append(...this.createsElements(items));
-  }
-
-  createsElements(items) {
     const elements = items.map(item => {
       const listItem = document.createElement("li");
       listItem.classList.add("gallery-list__item");
@@ -44,7 +34,7 @@ export default class View extends EventEmitter {
       return listItem;
     });
 
-    return elements;
+    this.listMain.append(...elements);
   }
 
   createsLargeImg(url) {
@@ -62,19 +52,43 @@ export default class View extends EventEmitter {
     if (this.listFavorites.children.length === 0) {
       this.galleryTitle.classList.remove("hidden");
       this.galleryContainer.classList.remove("home-page-padding");
+      const elements = items.map(item => {
+        const listItem = document.createElement("li");
+        listItem.classList.add("gallery-list__item");
+        listItem.classList.add("js-list-item");
+        listItem.classList.add("js-list-item-fav");
 
-      this.listFavorites.append(...this.createsElements(items));
+        const listItemImg = document.createElement("img");
+        listItemImg.classList.add("js-gallery-img");
+        listItemImg.classList.add("gallery-img");
+        listItemImg.setAttribute("src", item.webformatURL);
+        listItemImg.setAttribute("srcset", item.largeImageURL);
+        listItemImg.setAttribute("alt", item.tags);
+        listItemImg.setAttribute("id", item.id);
+
+        const removeFavBtn = document.createElement("button");
+        removeFavBtn.classList.add("gallery-list__item-btn");
+        removeFavBtn.classList.add("js-remove-fav-btn");
+
+        listItem.append(listItemImg, removeFavBtn);
+        return listItem;
+      });
+      this.listFavorites.append(...elements);
     }
   }
 
   showsTheMain() {
     this.containerFav.classList.add("hidden");
     this.containerMain.classList.remove("hidden");
-    this.listFavorites.innerHTML = '';
+    this.listFavorites.innerHTML = "";
   }
 
   showsTheFavorites() {
     this.containerMain.classList.add("hidden");
     this.containerFav.classList.remove("hidden");
+  }
+
+  removeElementFavorites(elem) {
+    elem.remove();
   }
 }

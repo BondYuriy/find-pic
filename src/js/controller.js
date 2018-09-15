@@ -7,12 +7,14 @@ export default class Controller {
     this.addMore = document.querySelector(".js-next-btn");
     this.input = document.querySelector(".js-input");
     this.list = document.querySelector(".js-list");
+    this.listFav = document.querySelector(".js-list-favorites");
     this.logoBtn = document.querySelector(".js-logo");
     this.closeBtn = document.querySelector(".js-btn-close");
     this.backBtn = document.querySelector(".js-btn-back");
     this.nextBtn = document.querySelector(".js-btn-next");
     this.addfavoritesBtn = document.querySelector(".js-btn-favorites");
     this.favoritesBtn = document.querySelector(".js-favorites");
+    this.removeFav = document.querySelector(".js-list-favorites");
     this.qurty = "";
     this.galleryItem = "";
     this.page = 1;
@@ -20,6 +22,7 @@ export default class Controller {
     this.form.addEventListener("submit", this.addHandler.bind(this));
     this.addMore.addEventListener("click", this.addNextHandler.bind(this));
     this.list.addEventListener("click", this.zooms.bind(this));
+    this.listFav.addEventListener("click", this.zoomsFavorites.bind(this));
     this.closeBtn.addEventListener("click", this.closeModal.bind(this));
     this.backBtn.addEventListener("click", this.backImg.bind(this));
     this.nextBtn.addEventListener("click", this.nextImg.bind(this));
@@ -32,11 +35,14 @@ export default class Controller {
       this.displaysFavorites.bind(this)
     );
     this.logoBtn.addEventListener("click", this.toMain.bind(this));
+    this.removeFav.addEventListener(
+      "click",
+      this.removeFavoritesItem.bind(this)
+    );
   }
 
   addHandler(evt) {
     this.qurty = this.input.value;
-
     if (this.qurty !== "") {
       evt.preventDefault();
       this.model.getData(this.qurty).then(data => this.view.addsElements(data));
@@ -61,6 +67,13 @@ export default class Controller {
     if (evt.target.tagName === "IMG") {
       this.galleryItem = evt.target.parentNode;
       this.view.createsLargeImg(evt.target.srcset);
+    }
+  }
+
+  zoomsFavorites(evt) {
+    if (evt.target.firstChild.tagName === "IMG") {
+      this.galleryItem = evt.target;
+      this.view.createsLargeImg(evt.target.firstChild.srcset);
     }
   }
 
@@ -100,5 +113,13 @@ export default class Controller {
 
   toFavorites() {
     this.view.showsTheFavorites();
+  }
+
+  removeFavoritesItem(evt) {
+    if (evt.target.tagName === "BUTTON") {
+      const id = evt.target.previousSibling.id;
+      this.model.removeStorage(id);
+      this.view.removeElementFavorites(evt.target.parentNode);
+    }
   }
 }

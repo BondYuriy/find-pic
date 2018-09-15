@@ -7,3 +7,41 @@
 .nav__item-icon {
   fill: #673ab7;
 }
+
+.js-list-item-fav {
+  position: relative;
+}
+
+.js-list-item-fav::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.js-list-item-fav:hover::after{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.gallery-list__item-btn {
+  display: block;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  right: 0.4375rem;
+  top: 0.4375rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url("../img/icons/close.svg");
+  background-size: cover;
+  z-index: 10;
+  opacity: 0;
+}
+
+.js-list-item-fav:hover > .gallery-list__item-btn {
+  opacity: 1;
+}

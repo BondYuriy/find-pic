@@ -1,5 +1,5 @@
 import Api from "./service/api";
-import Storage from './service/storage';
+import Storage from "./service/storage";
 import Model from "./js/model";
 import View from "./js/view";
 import Controller from "./js/controller";

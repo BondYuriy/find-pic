@@ -21,6 +21,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.js-list-main {
   margin-bottom: 1.875rem;
 }
 
@@ -47,5 +50,6 @@
   color: #ffffff;
   background: #cddc39;
   font-family: "Comfortaa", sans-serif;
+  font-size: 14px;
   font-weight: 700;
 }
