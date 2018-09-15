@@ -301,6 +301,9 @@ template {
 * {
   box-sizing: border-box; }
 
+html {
+  font-size: 40px; }
+
 .wrapper {
   padding: 13.4375rem 0.625rem 1.5625rem;
   min-width: 18.75rem;
@@ -371,7 +374,7 @@ template {
   color: #ffffff;
   background: #cddc39;
   font-family: "Comfortaa", sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700; }
 
 .nav__item {
@@ -466,7 +469,7 @@ template {
   color: #ffffff;
   background: #cddc39;
   font-family: "Comfortaa", sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700; }
 
 .modal {
